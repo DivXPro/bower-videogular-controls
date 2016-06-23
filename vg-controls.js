@@ -790,7 +790,7 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                 },
                 scope: {
                     vgThumbnails: "=",
-                    disabled: '@',
+                    noDrag: '@',
                 },
                 link: function (scope, elem, attr, API) {
                     var isSeeking = false;
@@ -830,8 +830,8 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                     };
 
                     scope.onScrubBarTouchStart = function onScrubBarTouchStart($event) {
-                        console.log('disabled real', scope.disabled);
-                        if (scope.disabled) return false;
+                        console.log('disabled real', scope.noDrag);
+                        if (scope.noDrag) return false;
                         var event = $event.originalEvent || $event;
                         var touches = event.touches;
                         var touchX = scope.getOffset(touches[0]);
@@ -845,8 +845,8 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                     };
 
                     scope.onScrubBarTouchEnd = function onScrubBarTouchEnd($event) {
-                        console.log('disabled real', scope.disabled);
-                        if (scope.disabled) return false;
+                        console.log('disabled real', scope.noDrag);
+                        if (scope.noDrag) return false;
                         var event = $event.originalEvent || $event;
                         if (isPlayingWhenSeeking) {
                             isPlayingWhenSeeking = false;
@@ -858,8 +858,8 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                     };
 
                     scope.onScrubBarTouchMove = function onScrubBarTouchMove($event) {
-                        console.log('disabled real', scope.disabled);
-                        if (scope.disabled) return false;
+                        console.log('disabled real', scope.noDrag);
+                        if (scope.noDrag) return false;
 
                         var event = $event.originalEvent || $event;
                         var touches = event.touches;
@@ -887,8 +887,8 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                     };
 
                     scope.onScrubBarMouseDown = function onScrubBarMouseDown(event) {
-                        console.log('disabled real', scope.disabled);
-                        if (scope.disabled) return false;
+                        console.log('disabled real', scope.noDrag);
+                        if (scope.noDrag) return false;
 
                         event = VG_UTILS.fixEventOffset(event);
 
@@ -903,8 +903,8 @@ angular.module("com.2fdevs.videogular.plugins.controls")
 
                     scope.onScrubBarMouseUp = function onScrubBarMouseUp(event) {
                         //event = VG_UTILS.fixEventOffset(event);
-                        console.log('disabled real', scope.disabled);
-                        if (scope.disabled) return false;
+                        console.log('disabled real', scope.noDrag);
+                        if (scope.noDrag) return false;
 
                         if (isPlayingWhenSeeking) {
                             isPlayingWhenSeeking = false;
@@ -917,8 +917,8 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                     };
 
                     scope.onScrubBarMouseMove = function onScrubBarMouseMove(event) {
-                        console.log('disabled real', scope.disabled);
-                        if (scope.disabled) return false;
+                        console.log('disabled real', scope.noDrag);
+                        if (scope.noDrag) return false;
 
                         if (scope.vgThumbnails && scope.vgThumbnails.length) {
                             var second = Math.round(event.offsetX * API.mediaElement[0].duration / slider.scrollWidth);
@@ -943,8 +943,8 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                     };
 
                     scope.onScrubBarKeyDown = function onScrubBarKeyDown(event) {
-                        console.log('disabled real', scope.disabled);
-                        if (scope.disabled) return false;
+                        console.log('disabled real', scope.noDrag);
+                        if (scope.noDrag) return false;
                         var currentPercent = (API.currentTime / API.totalTime) * 100;
 
                         if (event.which === LEFT || event.keyCode === LEFT) {
