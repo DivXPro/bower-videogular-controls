@@ -830,7 +830,7 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                     };
 
                     scope.onScrubBarTouchStart = function onScrubBarTouchStart($event) {
-                        console.log('disabled', scope.disabled);
+                        console.log('disabled real', scope.disabled);
                         if (scope.disabled) return false;
                         var event = $event.originalEvent || $event;
                         var touches = event.touches;
@@ -845,7 +845,7 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                     };
 
                     scope.onScrubBarTouchEnd = function onScrubBarTouchEnd($event) {
-                        console.log('disabled', scope.disabled);
+                        console.log('disabled real', scope.disabled);
                         if (scope.disabled) return false;
                         var event = $event.originalEvent || $event;
                         if (isPlayingWhenSeeking) {
@@ -858,7 +858,7 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                     };
 
                     scope.onScrubBarTouchMove = function onScrubBarTouchMove($event) {
-                        console.log('disabled', scope.disabled);
+                        console.log('disabled real', scope.disabled);
                         if (scope.disabled) return false;
 
                         var event = $event.originalEvent || $event;
@@ -887,7 +887,7 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                     };
 
                     scope.onScrubBarMouseDown = function onScrubBarMouseDown(event) {
-                        console.log('disabled', scope.disabled);
+                        console.log('disabled real', scope.disabled);
                         if (scope.disabled) return false;
 
                         event = VG_UTILS.fixEventOffset(event);
@@ -903,7 +903,7 @@ angular.module("com.2fdevs.videogular.plugins.controls")
 
                     scope.onScrubBarMouseUp = function onScrubBarMouseUp(event) {
                         //event = VG_UTILS.fixEventOffset(event);
-                        console.log('disabled', scope.disabled);
+                        console.log('disabled real', scope.disabled);
                         if (scope.disabled) return false;
 
                         if (isPlayingWhenSeeking) {
@@ -917,7 +917,7 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                     };
 
                     scope.onScrubBarMouseMove = function onScrubBarMouseMove(event) {
-                        console.log('disabled', scope.disabled);
+                        console.log('disabled real', scope.disabled);
                         if (scope.disabled) return false;
 
                         if (scope.vgThumbnails && scope.vgThumbnails.length) {
@@ -943,7 +943,7 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                     };
 
                     scope.onScrubBarKeyDown = function onScrubBarKeyDown(event) {
-                        console.log('disabled', scope.disabled);
+                        console.log('disabled real', scope.disabled);
                         if (scope.disabled) return false;
                         var currentPercent = (API.currentTime / API.totalTime) * 100;
 
