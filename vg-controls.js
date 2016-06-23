@@ -651,7 +651,7 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                             scope.thumbnails = {
                                 "background-image": 'none'
                             };
-                            
+
                             if (scope.vgThumbnails) {
                                 for (var i=0, l=scope.vgThumbnails.length; i<l; i++) {
                                     var th = scope.vgThumbnails[i];
@@ -789,7 +789,8 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                     return attrs.vgTemplate || 'vg-templates/vg-scrub-bar';
                 },
                 scope: {
-                    vgThumbnails: "="
+                    vgThumbnails: "=",
+                    disabled: '@',
                 },
                 link: function (scope, elem, attr, API) {
                     var isSeeking = false;
@@ -927,6 +928,7 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                     };
 
                     scope.onScrubBarKeyDown = function onScrubBarKeyDown(event) {
+                        if (scope.disabled) return false;
                         var currentPercent = (API.currentTime / API.totalTime) * 100;
 
                         if (event.which === LEFT || event.keyCode === LEFT) {
