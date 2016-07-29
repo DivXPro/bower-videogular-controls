@@ -830,7 +830,6 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                     };
 
                     scope.onScrubBarTouchStart = function onScrubBarTouchStart($event) {
-                        console.log('disabled real', scope.noDrag);
                         if (scope.noDrag) return false;
                         var event = $event.originalEvent || $event;
                         var touches = event.touches;
