@@ -790,7 +790,7 @@ angular.module("com.2fdevs.videogular.plugins.controls")
                 },
                 scope: {
                     vgThumbnails: "=",
-                    noDrag: '@',
+                    noDrag: '=',
                 },
                 link: function (scope, elem, attr, API) {
                     var isSeeking = false;
